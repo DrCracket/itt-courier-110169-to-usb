@@ -14,19 +14,8 @@
 #define MATRIX_ROWS 15
 #define MATRIX_COLS 8
 
-/* define if matrix has ghost */
-//#define MATRIX_HAS_GHOST
-
-/* Set 0 if debouncing isn't needed */
-#define DEBOUNCE    1
-
 /* Solenoid related stuff */
 #define SOLENOID_DELAY 10
-
-/* Mechanical locking support. Use KC_LCAP, KC_LNUM or KC_LSCR instead in keymap */
-//#define LOCKING_SUPPORT_ENABLE
-/* Locking resynchronize hack */
-//#define LOCKING_RESYNC_ENABLE
 
 /* key combination for command */
 #define IS_COMMAND()    ( \
