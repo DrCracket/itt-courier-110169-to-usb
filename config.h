@@ -6,8 +6,8 @@
 #define VENDOR_ID       0xFEED
 #define PRODUCT_ID      0x6060
 #define DEVICE_VER      0x0001
-#define MANUFACTURER    ITT Courier
-#define PRODUCT         110169
+#define MANUFACTURER    ITT
+#define PRODUCT         Courier 110169
 #define DESCRIPTION     t.m.k. keyboard firmware for ITT Courier 110169
 
 /* key matrix size */
@@ -19,7 +19,6 @@
 
 /* key combination for command */
 #define IS_COMMAND()    ( \
-    keyboard_report->keys[0] == KC_STOP || \
     keyboard_report->mods == (MOD_BIT(KC_LSHIFT) | MOD_BIT(KC_RSHIFT)) \
 )
 
