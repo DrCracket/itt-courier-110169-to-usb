@@ -86,7 +86,7 @@ Clone the repository with the following command:
 ```sh
 git clone --recurse-submodules git@github.com:DrCracket/itt-courier-110169-to-usb.git
 ```
-See [tmk_core/doc/build.md](tmk_core/doc/build.md).
+See [tmk_core/doc/build.md](https://github.com/tmk/tmk_core/blob/master/doc/build.md).
 
 To build the firmware and program the controller run this command:
 ```sh
@@ -96,4 +96,4 @@ make teensy [KEYMAP=yourname]
 You can select a keymap name with optional `KEYMAP=` ('plain' is the default name).
 
 You can change keymap by editing code of `keymap_plain.c` directly, or copy it to your own keymap file like `keymap_yourname.c` and edit the file.
-How to define the keymap is probably obvious. You can find key symbols in [tmk_core/doc/keycode.txt](tmk_core/doc/keycode.txt). See [tmk_core/doc/keymap.md](tmk_core/doc/keymap.md) for more detail.
+How to define the keymap should be pretty straightforward. You can find key symbols in [tmk_core/doc/keycode.txt](https://github.com/tmk/tmk_core/blob/master/doc/keycode.txt). See [tmk_core/doc/keymap.md](https://github.com/tmk/tmk_core/blob/master/doc/keymap.md) for more detail.
