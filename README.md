@@ -79,7 +79,7 @@ Now you have to connect the Teensy to an USB cable. Theoretically you could dire
  +5v  Data-  GND
     +5v  Data+  GND
 ```
-
+If you want to, you can remove some components, that aren't needed anymore. You can savely remove the 6.0Mhz crystal (Y1), the two DM7417N Buffers (IC6 & IC7), the SN74LS74AN Flip-Flop (IC2) and the LM3905N timer (IC8).
 
 ## Build Instructions
 Clone the repository with the following command:
