@@ -1,7 +1,7 @@
 # Alternative Controller for ITT Courier 110169
 
 This firmware can be used to convert an ITT Courier 110169 keyboard to USB. 
-It was written with the [Teensy 2.0](https://www.pjrc.com/store/teensy.html) microcontroller in mind,
+It was written with the [Teensy 2.0](https://www.pjrc.com/store/teensy.html) development board in mind,
 because with it you only need to make minor modifications to the PCB.
 This project makes use of the [tmk_core](https://github.com/tmk/tmk_core) keyboard firmware library.
 
