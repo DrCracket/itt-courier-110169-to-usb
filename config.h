@@ -15,7 +15,7 @@
 #define MATRIX_COLS 8
 
 /* Solenoid related stuff */
-#define SOLENOID_DELAY 10
+#define SOLENOID_DELAY 20
 
 /* key combination for command */
 #define IS_COMMAND()    ( \
