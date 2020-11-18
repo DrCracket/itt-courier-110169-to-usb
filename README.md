@@ -1,15 +1,20 @@
-# Alternative Controller for ITT Courier 110169
+#  ITT Courier 110169 Keyboard USB Conversion
 
-This firmware can be used to convert an ITT Courier 110169 keyboard to USB. 
-It was written with the [Teensy 2.0](https://www.pjrc.com/store/teensy.html) development board in mind,
-because with it you only need to make minor modifications to the PCB.
-This project makes use of the [tmk_core](https://github.com/tmk/tmk_core) keyboard firmware library.
+This firmware can be used to convert an [ITT Courier
+110169](https://www.youtube.com/watch?v=37tdDoC7rGA) keyboard to USB. It makes
+use of the [tmk_core](https://github.com/tmk/tmk_core) keyboard firmware
+library and was written with with the [Teensy
+2.0](https://www.pjrc.com/store/teensy.html) development board in mind, because
+with it you only need to make minor modifications to the PCB. The project only
+contains instructions on how to perform the necessary modifications and get
+everything up and running. For information on the reverse engineering process
+look [here](https://deskthority.net/viewtopic.php?f=7&t=24822).
 
 ## Wiring
 
-The first thing you have to do is to desolder the original [8048](https://en.wikipedia.org/wiki/Intel_MCS-48) microcontroller.
-Then you have to connect the Teensy to hole 9 - 32 on the PCB:
-
+The first thing you have to do is to desolder the original
+[8048](https://en.wikipedia.org/wiki/Intel_MCS-48) microcontroller. Then you
+have to connect the Teensy to hole 9 - 32 on the PCB:
 ```
 +-------\/-------+
 [] 1         40 []
@@ -35,9 +40,10 @@ Then you have to connect the Teensy to hole 9 - 32 on the PCB:
 +----------------+                |       PD5 VCC GND RST PD4       |
                                   +---------------------------------+
 ```
-After that take a look at the bottom side of the PCB, where the microcontroller sits. Here you have to do a few things:
+After that take a look at the bottom side of the PCB, where the microcontroller
+sits. Here you have to do a few things:
 - Sever the connection between pin 10 and 26
-- Bridge pins 8 and 9
+- Bridge pins 7 and 8
 - Connect pins 26 and 32
 - Connect pins 27 and 35
 
@@ -69,7 +75,11 @@ It should look somewhat like this:
    +------------+                   +------------+   
 
 ```
-Now you have to connect the Teensy to an USB cable. Theoretically you could directly connect a cable to the Teensy, but a cleaner way would be to repurpose the connector the original cable used and build a custom USB cable. For that you have to connect the Data - and Data + pins of the Teensy USB connector to pin 3 and 4 of the connector on the PCB:
+Now you have to connect the Teensy to an USB cable. Theoretically you could
+directly connect a cable to the Teensy, but a cleaner way would be to repurpose
+the connector the original cable used and build a custom USB cable. For that
+you have to connect the Data - and Data + pins of the Teensy USB connector to
+pin 3 and 4 of the connector on the PCB:
 
 ```
   |  |  |  |  |  |
@@ -79,21 +89,29 @@ Now you have to connect the Teensy to an USB cable. Theoretically you could dire
  +5v  Data-  GND
     +5v  Data+  GND
 ```
-If you want to, you can remove some components, that aren't needed anymore. You can savely remove the 6.0Mhz crystal (Y1), the two DM7417N Buffers (IC6 & IC7), the SN74LS74AN Flip-Flop (IC2) and the LM3905N timer (IC8).
+If you want to, you can remove some components, that aren't needed anymore. You
+can savely remove the 6.0Mhz crystal (Y1), the two DM7417N Buffers (IC6 & IC7),
+the SN74LS74AN Flip-Flop (IC2) and the LM3905N timer (IC8).
 
 ## Build Instructions
 Clone the repository with the following command:
 ```sh
 git clone --recurse-submodules git@github.com:DrCracket/itt-courier-110169-to-usb.git
 ```
-See [tmk_core/doc/build.md](https://github.com/tmk/tmk_core/blob/master/doc/build.md).
-
 To build the firmware and program the controller run this command:
 ```sh
 make teensy [KEYMAP=yourname]
 ```
+You can select a keymap name with the optional `KEYMAP=` parameter ('plain' is
+the default name). See
+[tmk_core/doc/build.md](https://github.com/tmk/tmk_core/blob/master/doc/build.md)
+for more information.
 
-You can select a keymap name with optional `KEYMAP=` ('plain' is the default name).
-
-You can change keymap by editing code of `keymap_plain.c` directly, or copy it to your own keymap file like `keymap_yourname.c` and edit the file.
-How to define the keymap should be pretty straightforward. You can find key symbols in [tmk_core/doc/keycode.txt](https://github.com/tmk/tmk_core/blob/master/doc/keycode.txt). See [tmk_core/doc/keymap.md](https://github.com/tmk/tmk_core/blob/master/doc/keymap.md) for more detail.
+You can change the keymap by editing the code of `keymap_plain.c` directly, or
+by copying it to your own keymap file like `keymap_yourname.c` and editing it
+from there. How to define a keymap should be pretty straightforward. You can
+find key symbols in
+[tmk_core/doc/keycode.txt](https://github.com/tmk/tmk_core/blob/master/doc/keycode.txt).
+Look at
+[tmk_core/doc/keymap.md](https://github.com/tmk/tmk_core/blob/master/doc/keymap.md)
+for more details.
