@@ -3,7 +3,7 @@
 This firmware can be used to convert an [ITT Courier
 110169](https://www.youtube.com/watch?v=37tdDoC7rGA) keyboard to USB. It makes
 use of the [tmk_core](https://github.com/tmk/tmk_core) keyboard firmware
-library and was written with with the [Teensy
+library and was written with the [Teensy
 2.0](https://www.pjrc.com/store/teensy.html) development board in mind, because
 with it you only need to make minor modifications to the PCB. The project only
 contains instructions on how to perform the necessary modifications and get
@@ -90,7 +90,7 @@ pin 3 and 4 of the connector on the PCB:
     +5v  Data+  GND
 ```
 If you want to, you can remove some components, that aren't needed anymore. You
-can savely remove the 6.0Mhz crystal (Y1), the two DM7417N Buffers (IC6 & IC7),
+can safely remove the 6.0Mhz crystal (Y1), the two DM7417N Buffers (IC6 & IC7),
 the SN74LS74AN Flip-Flop (IC2) and the LM3905N timer (IC8).
 
 ## Build Instructions
