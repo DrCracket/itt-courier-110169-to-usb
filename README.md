@@ -7,8 +7,8 @@ library and was written with the [Teensy
 2.0](https://www.pjrc.com/store/teensy.html) development board in mind, because
 with it you only need to make minor modifications to the PCB. The project only
 contains instructions on how to perform the necessary modifications and get
-everything up and running. For information on the reverse engineering process
-look [here](https://deskthority.net/viewtopic.php?f=7&t=24822).
+everything up and running. For information on how I reverse engineered that
+thing look [here](https://deskthority.net/viewtopic.php?f=7&t=24822).
 
 ## Wiring
 
@@ -96,7 +96,7 @@ the SN74LS74AN Flip-Flop (IC2) and the LM3905N timer (IC8).
 ## Build Instructions
 Clone the repository with the following command:
 ```sh
-git clone --recurse-submodules git@github.com:DrCracket/itt-courier-110169-to-usb.git
+git clone --recurse-submodules https://github.com/potamides/itt-courier-110169-to-usb
 ```
 To build the firmware and program the controller run this command:
 ```sh
